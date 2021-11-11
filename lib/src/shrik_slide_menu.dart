@@ -37,16 +37,10 @@ class ShrinkSlideSideMenuState extends SideMenuState {
 
   Widget _getChild() => Stack(
     children: [
-      SafeArea(
-        top: _opened,
-        bottom: _opened,
-        right: _opened,
-        left: _opened,
-        child: ClipRRect(
-          borderRadius: _getBorderRadius(),
-          clipBehavior: Clip.antiAlias,
-          child: widget.child,
-        ),
+      ClipRRect(
+        borderRadius: _getBorderRadius(),
+        clipBehavior: Clip.antiAlias,
+        child: widget.child,
       ),
       if (_opened && widget.isDismissible)
         GestureDetector(
