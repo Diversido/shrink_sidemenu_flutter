@@ -65,6 +65,9 @@ class SideMenu extends StatefulWidget {
   /// If true, shows a colored mask [barrierColor] over the child as SideMenu open and tap to close SideMenu.
   /// This can also avoid gestures in child part.
   final bool isDismissible;
+  /// If true, shows a colored mask [barrierColor] over the child as SideMenu open and tap to close SideMenu.
+  /// This can also avoid gestures in child part.
+  final void Function()? isDismissibleChildOnClick;
 
   /// If [isDismissible] is true, custom the mask color.
   final Color? barrierColor;
@@ -123,6 +126,7 @@ class SideMenu extends StatefulWidget {
     this.barrierColor,
     this.curve = Curves.fastLinearToSlowEaseIn,
     this.onMenuOpenChanged,
+    this.isDismissibleChildOnClick,
   })  : assert(maxMenuWidth > 0),
         _inverse = inverse ? -1 : 1,
         super(key: key);
