@@ -48,7 +48,7 @@ class ShrinkSlideRotateSideMenuState extends SideMenuState {
       ),
       if (_opened && widget.isDismissible)
         GestureDetector(
-          onTap: closeSideMenu,
+          onTap: widget.isDismissibleChildOnClick ?? closeSideMenu,
           child: Container(color: widget.barrierColor ?? Colors.transparent),
         ),
     ],

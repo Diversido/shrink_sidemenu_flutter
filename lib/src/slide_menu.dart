@@ -36,7 +36,7 @@ class SlideSideMenuState extends SideMenuState {
       widget.child,
       if (_opened && widget.isDismissible)
         GestureDetector(
-          onTap: closeSideMenu,
+          onTap: widget.isDismissibleChildOnClick ?? closeSideMenu,
           child: Container(color: widget.barrierColor ?? Colors.transparent),
         ),
     ],
