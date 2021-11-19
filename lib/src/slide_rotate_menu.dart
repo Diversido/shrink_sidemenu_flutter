@@ -48,6 +48,18 @@ class SlideRotateSideMenuState extends SideMenuState {
       ),
       if (_opened && widget.isDismissible)
         GestureDetector(
+          onPanUpdate: (details) {
+            // Swiping in right direction.
+            if (details.delta.dx > 0) {
+              if(widget.isDismissibleChildOnClick != null) {
+                widget.isDismissibleChildOnClick!();
+              } else {
+                closeSideMenu();
+              }
+            }
+            // Swiping in left direction.
+            if (details.delta.dx < 0) {}
+          },
           onTap: widget.isDismissibleChildOnClick ?? closeSideMenu,
           child: Container(color: widget.barrierColor ?? Colors.transparent),
         ),
