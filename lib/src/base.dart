@@ -44,6 +44,9 @@ class SideMenu extends StatefulWidget {
   /// Close Icon
   final Icon? closeIcon;
 
+  /// Max Size of available area (For custom sizes (the default is MediaQuery.of(context).size))
+  final Size? maxSize;
+
   /// Menu that should be in side menu
   ///
   /// generally a [SingleChildScrollView] with a [Column]
@@ -122,6 +125,7 @@ class SideMenu extends StatefulWidget {
     this.type = SideMenuType.shrikNRotate,
     this.maxMenuWidth = 275.0,
     bool inverse = false,
+    this.maxSize,
     this.isDismissible = false,
     this.barrierColor,
     this.curve = Curves.fastLinearToSlowEaseIn,

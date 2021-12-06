@@ -4,7 +4,7 @@ class ShrinkSlideRotateSideMenuState extends SideMenuState {
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
-    final size = mq.size;
+    final size = widget.maxSize ?? mq.size;
     final statusBarHeight = mq.padding.top;
 
     return Material(
